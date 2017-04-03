@@ -1,13 +1,16 @@
 //should have string name ,email
-var mongoose=require("mongoose")
-// register model
-var Schema=mongoose.Schema
-var users=new Schema({
-  name:String,
-  email:String,
-  password:String,
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
+var userSchema=new Schema({
+  name:{type:String,required: true} 
+  email: { type: String, required: true, unique: true },
+  password:{type:String,required: true} 
   friends:[String],
   groups:[String]
 })
 // ORM
-mongoose.model("users",users)
+
+var User = mongoose.model('User', userSchema);
+
+
+module.exports = User;

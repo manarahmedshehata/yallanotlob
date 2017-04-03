@@ -2,11 +2,13 @@
 var mongoose=require("mongoose")
 // register model
 var Schema=mongoose.Schema
-var groups=new Schema({
-  name:String,
-  owner:String,
-  users:[String]
+var groupSchema=new Schema({
+  name:{ type: String, required: true, unique: true }
+  owner:{ type: String, required: true}
+  members:[String]
 
 })
 // ORM
-mongoose.model("groups",groups)
+var Group=mongoose.model("Group",groupSchema)
+
+module.exports = Group;
