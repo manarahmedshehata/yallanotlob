@@ -1,0 +1,1 @@
+{"options":{"validator":{"$and":[{"owner":{"$exists":true}}]}},"indexes":[{"v":2,"key":{"_id":1},"name":"_id_","ns":"yallanotlob.orders"}]}
